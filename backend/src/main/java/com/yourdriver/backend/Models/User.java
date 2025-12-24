@@ -1,7 +1,7 @@
-package com.yourdriver.backend.Models;
+package com.yourdriver.backend.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.yourdriver.backend.Enums.*;
+import com.yourdriver.backend.enums.*;
 
 import java.time.LocalDateTime;
 

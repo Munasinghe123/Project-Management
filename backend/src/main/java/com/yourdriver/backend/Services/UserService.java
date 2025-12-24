@@ -1,13 +1,13 @@
-package com.yourdriver.backend.Services;
+package com.yourdriver.backend.services;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.yourdriver.backend.Repositories.UserRepository;
-import com.yourdriver.backend.DTOs.UpdateUserRequest;
-import com.yourdriver.backend.Models.*;
+import com.yourdriver.backend.dtos.UpdateUserRequest;
+import com.yourdriver.backend.models.*;
+import com.yourdriver.backend.repositories.UserRepository;
 
 @Service
 public class UserService {

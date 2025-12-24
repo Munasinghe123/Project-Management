@@ -1,4 +1,4 @@
-package com.yourdriver.backend.DTOs;
+package com.yourdriver.backend.dtos;
 
 public class UpdateUserRequest {
     
