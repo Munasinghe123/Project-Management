@@ -1,5 +1,6 @@
 package com.yourdriver.backend.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.yourdriver.backend.Enums.*;
 
 import java.time.LocalDateTime;
@@ -40,6 +41,7 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
+    @JsonIgnore
     @Column(nullable = false)
     private String passWord;
 
