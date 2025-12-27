@@ -1,28 +1,31 @@
-package com.yourdriver.backend.Services;
+package com.yourdriver.backend.services;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.yourdriver.backend.DTOs.RegistrationRequest;
-import com.yourdriver.backend.Models.User;
-import com.yourdriver.backend.Repositories.UserRepository;
+import com.yourdriver.backend.dtos.RegistrationRequest;
+import com.yourdriver.backend.models.User;
+import com.yourdriver.backend.repositories.UserRepository;
+import com.yourdriver.backend.dtos.LoginRequest;
 
 @Service
 public class AuthService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final JwtService jwtService;
 
-    public AuthService(UserRepository userRepository, PasswordEncoder passwordEncoder){
-        this.userRepository=userRepository;
-        this.passwordEncoder=passwordEncoder;
+    public AuthService(UserRepository userRepository, PasswordEncoder passwordEncoder, JwtService jwtService) {
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
+        this.jwtService = jwtService;
     }
 
     @Transactional
-    public void register(RegistrationRequest request){
+    public void register(RegistrationRequest request) {
 
-        if(userRepository.existsByEmail(request.email)){
+        if (userRepository.existsByEmail(request.email)) {
             throw new RuntimeException("email already exixts");
         }
 
@@ -36,5 +39,17 @@ public class AuthService {
 
         userRepository.save(user);
     }
-    
+
+    public String login(LoginRequest request) {
+
+        User user = userRepository.findByEmail(request.email)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        if (!passwordEncoder.matches(request.password, user.getPassWord())) {
+            throw new RuntimeException("Invalid credentials");
+        }
+
+        return jwtService.generateToken(user.getEmail(), user.getRole() );
+    }
+
 }

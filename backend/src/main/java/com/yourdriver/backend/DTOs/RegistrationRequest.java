@@ -1,6 +1,6 @@
-package com.yourdriver.backend.DTOs;
+package com.yourdriver.backend.dtos;
 
-import com.yourdriver.backend.Enums.UserRole;
+import com.yourdriver.backend.enums.UserRole;
 
 public class RegistrationRequest {
 

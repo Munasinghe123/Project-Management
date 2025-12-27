@@ -1,7 +1,7 @@
-package com.yourdriver.backend.Enums;
+package com.yourdriver.backend.enums;
 
 public enum UserRole {
 
-    PASSENGER,
-    DRIVER
+    ROLE_USER,
+    ROLE_ADMIN
 }
