@@ -1,13 +1,13 @@
-package com.yourdriver.backend.services;
+package com.projectmanagement.backend.services;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.yourdriver.backend.dtos.UpdateUserRequest;
-import com.yourdriver.backend.models.*;
-import com.yourdriver.backend.repositories.UserRepository;
+import com.projectmanagement.backend.dtos.UpdateUserRequest;
+import com.projectmanagement.backend.models.*;
+import com.projectmanagement.backend.repositories.UserRepository;
 
 @Service
 public class UserService {
@@ -23,6 +23,7 @@ public class UserService {
                 .orElseThrow(() -> new RuntimeException("User not found"));
     }
 
+    @Transactional
     public User updateUser(Long id, UpdateUserRequest request) {
 
         User user = userRepository.findById(id)

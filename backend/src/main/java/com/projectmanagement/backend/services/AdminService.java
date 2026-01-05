@@ -1,11 +1,11 @@
-package com.yourdriver.backend.services;
+package com.projectmanagement.backend.services;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.yourdriver.backend.models.User;
-import com.yourdriver.backend.repositories.UserRepository;
+import com.projectmanagement.backend.models.User;
+import com.projectmanagement.backend.repositories.UserRepository;
 
 @Service
 public class AdminService {

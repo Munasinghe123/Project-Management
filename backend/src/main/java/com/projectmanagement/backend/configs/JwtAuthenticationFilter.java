@@ -1,4 +1,4 @@
-package com.yourdriver.backend.configs;
+package com.projectmanagement.backend.configs;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,9 +14,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.yourdriver.backend.models.User;
-import com.yourdriver.backend.repositories.UserRepository;
-import com.yourdriver.backend.services.JwtService;
+import com.projectmanagement.backend.models.User;
+import com.projectmanagement.backend.repositories.UserRepository;
+import com.projectmanagement.backend.services.JwtService;
 
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {

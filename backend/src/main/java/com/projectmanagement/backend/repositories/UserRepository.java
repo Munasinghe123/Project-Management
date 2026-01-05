@@ -1,10 +1,10 @@
-package com.yourdriver.backend.repositories;
+package com.projectmanagement.backend.repositories;
 
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.yourdriver.backend.models.User;
+import com.projectmanagement.backend.models.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 

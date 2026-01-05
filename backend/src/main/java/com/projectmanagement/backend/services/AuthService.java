@@ -1,13 +1,13 @@
-package com.yourdriver.backend.services;
+package com.projectmanagement.backend.services;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.yourdriver.backend.dtos.RegistrationRequest;
-import com.yourdriver.backend.models.User;
-import com.yourdriver.backend.repositories.UserRepository;
-import com.yourdriver.backend.dtos.LoginRequest;
+import com.projectmanagement.backend.dtos.LoginRequest;
+import com.projectmanagement.backend.dtos.RegistrationRequest;
+import com.projectmanagement.backend.models.User;
+import com.projectmanagement.backend.repositories.UserRepository;
 
 @Service
 public class AuthService {

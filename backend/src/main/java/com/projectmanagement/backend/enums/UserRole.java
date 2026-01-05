@@ -1,4 +1,4 @@
-package com.yourdriver.backend.enums;
+package com.projectmanagement.backend.enums;
 
 public enum UserRole {
 

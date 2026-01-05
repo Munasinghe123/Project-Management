@@ -1,4 +1,4 @@
-package com.yourdriver.backend.controllers;
+package com.projectmanagement.backend.controllers;
 
 import java.util.List;
 
@@ -6,9 +6,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.yourdriver.backend.models.*;
 
-import com.yourdriver.backend.services.AdminService;
+import com.projectmanagement.backend.models.*;
+import com.projectmanagement.backend.services.AdminService;
 
 @RestController
 @RequestMapping("api/admin")
